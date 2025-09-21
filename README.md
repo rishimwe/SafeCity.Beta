@@ -131,23 +131,21 @@ Le frontend React sera accessible (souvent sur `http://localhost:3000`).
 
 ---
 
-## 📂 Arborescence du projet
+## 📂 Arborescence du projet (Résumé)
 
-SafeCity-ButterflyAI/
-┣ 📂 butterfly_ai/ # Service ML (Flask + TensorFlow)
-┃ ┣ 📜 ml_server.py
-┃ ┣ 📜 requirements.txt
-┣ 📂 server/ # Backend Node.js / Express
-┃ ┣ 📜 index.ts
-┃ ┣ 📜 routes.ts
-┣ 📂 client/ # Frontend React / TypeScript
-┃ ┣ 📂 src/
-┃ ┃ ┣ 📜 App.tsx
-┃ ┃ ┣ 📜 main.tsx
-┃ ┃ ┗ 📂 components/
-┃ ┗ 📜 package.json
-┣ 📜 package.json
-┣ 📜 README.md
+```
+📦 SafeCity-ButterflyAI
+ ┣ 📂 butterfly_ai/          # Service ML (Flask + TensorFlow)
+ ┃ ┣ 📜 ml_server.py
+ ┃ ┣ 📜 requirements.txt
+ ┣ 📂 src/                   # Code Node.js / Express
+ ┃ ┣ 📜 routes.ts
+ ┃ ┣ 📜 butterflyPredictionService.ts
+ ┣ 📂 frontend/              # React / TypeScript
+ ┃ ┣ 📜 App.tsx
+ ┣ 📜 package.json
+ ┣ 📜 README.md
+```
 
 text
 
