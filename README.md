@@ -32,91 +32,147 @@ Il s’agit d’une plateforme de **sécurité urbaine intelligente** qui permet
 ## 🛠️ Installation & Lancement
 
 ### 1. Installer les dépendances Node.js
-```bash
+
+Dans la racine du projet, lancez :
+
 npm install
-```
+
+text
+
+Cette commande installe toutes les dépendances listées dans `package.json`.  
+Les principales comprennent :  
+- `@tanstack/react-query`  
+- `axios`  
+- `react` et `react-dom`  
+- `wouter`  
+- `typescript`  
+- `vite`  
+- et autres selon votre `package.json`
+
+---
 
 ### 2. Installer les dépendances Python
-Dans le dossier `butterfly_ai/`, créer ou modifier `requirements.txt` :
 
-```
+Dans le dossier `butterfly_ai/`, créez ou modifiez le fichier `requirements.txt` ainsi :
+
 flask
 tensorflow
-```
+pandas
+seaborn
+matplotlib
+scikit-learn
+numpy
 
-Puis installer :
-```bash
-pip install -r requirements.txt
-```
+text
 
-### 3. Lancer le serveur ML (Python)
-```bash
+Ensuite, installez-les via :
+
+pip install -r butterfly_ai/requirements.txt
+
+text
+
+---
+
+### 3. Lancer le serveur ML Python
+
+Depuis le dossier `butterfly_ai/` :
+
 cd butterfly_ai
 python ml_server.py
-```
 
-Le serveur Flask sera accessible sur `http://localhost:5000`.
+text
+
+Le serveur Flask sera accessible sur `http://localhost:5050` (ou port configuré).
+
+---
 
 ### 4. Lancer le backend Node.js
-```bash
+
+Dans la racine du projet :
+
 npm run dev
-```
+
+text
+
+Le backend Express écoute sur `http://localhost:5000`.
+
+---
 
 ### 5. Lancer le frontend React
-```bash
+
+Dans la racine du projet :
+
 npm run start
-```
+
+text
+
+Le frontend React sera accessible (souvent sur `http://localhost:3000`).
 
 ---
 
 ## 🔗 API Endpoints
 
 ### Incidents
-- `GET /api/incidents` → Liste les incidents.  
+
+- `GET /api/incidents` → Récupère la liste des incidents.  
 - `POST /api/incidents` → Crée un incident.  
-- `GET /api/incidents/:id` → Détails d’un incident.  
+- `GET /api/incidents/:id` → Détails d’un incident.
 
 ### Butterfly AI
+
 - `POST /api/butterfly/predict/:incidentId` → Prédiction pour un incident.  
 - `POST /api/butterfly/predict-batch` → Prédictions multiples.  
-- `GET /api/butterfly/recommendations` → Incidents recommandés.  
+- `GET /api/butterfly/recommendations` → Liste des incidents recommandés.
 
 ### SMS Alerts
+
 - `POST /api/incidents/:id/sms-alerts` → Envoi d’une alerte SMS.  
-- `GET /api/incidents/:id/sms-alerts` → Liste des SMS liés à un incident.  
+- `GET /api/incidents/:id/sms-alerts` → Liste des SMS correspondants.
 
 ---
 
 ## 📂 Arborescence du projet
 
-```
-📦 SafeCity-ButterflyAI
- ┣ 📂 butterfly_ai/          # Service ML (Flask + TensorFlow)
- ┃ ┣ 📜 ml_server.py
- ┃ ┣ 📜 requirements.txt
- ┣ 📂 src/                   # Code Node.js / Express
- ┃ ┣ 📜 routes.ts
- ┃ ┣ 📜 butterflyPredictionService.ts
- ┣ 📂 frontend/              # React / TypeScript
- ┃ ┣ 📜 App.tsx
- ┣ 📜 package.json
- ┣ 📜 README.md
-```
+SafeCity-ButterflyAI/
+┣ 📂 butterfly_ai/ # Service ML (Flask + TensorFlow)
+┃ ┣ 📜 ml_server.py
+┃ ┣ 📜 requirements.txt
+┣ 📂 server/ # Backend Node.js / Express
+┃ ┣ 📜 index.ts
+┃ ┣ 📜 routes.ts
+┣ 📂 client/ # Frontend React / TypeScript
+┃ ┣ 📂 src/
+┃ ┃ ┣ 📜 App.tsx
+┃ ┃ ┣ 📜 main.tsx
+┃ ┃ ┗ 📂 components/
+┃ ┗ 📜 package.json
+┣ 📜 package.json
+┣ 📜 README.md
+
+text
 
 ---
 
 ## 👨‍💻 Développement
 
-- **Langages utilisés** :  
-  - Node.js, Express (Backend)  
-  - React, TypeScript (Frontend)  
-  - Python, Flask, TensorFlow (Machine Learning)  
+### Langages
 
-- **Librairies clés** :  
-  - `axios` (communication Node.js → Flask)  
-  - `drizzle-orm` (ORM base de données)  
-  - `zod` (validation schémas)  
+- Node.js, Express (Backend)  
+- React, TypeScript (Frontend)  
+- Python, Flask, TensorFlow (ML)
 
+### Librairies principales
+
+- `axios` : communication HTTP  
+- `drizzle-orm` : ORM base de données PostgreSQL  
+- `zod` : validation des données  
+- `pandas`, `seaborn`, `matplotlib` : analyse et visualisation data  
+- `scikit-learn`, `tensorflow` : apprentissage automatique  
+- `react`, `@tanstack/react-query`, `wouter` : frontend React et routing  
+
+---
+
+N’hésitez pas à me demander en cas de besoin d’aide ou précision !
 ---
 
 ## ⚖️ Licence & Propriété Intellectuelle
